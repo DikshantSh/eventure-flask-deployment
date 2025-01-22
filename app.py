@@ -53,7 +53,8 @@ def fetch_user_profile():
     try:
         # Verify the token
         id_info = id_token.verify_oauth2_token(token, Request(), "55463530723-tm7626m1lf3skr28h31suabsgovc2vad.apps.googleusercontent.com")
-        
+        # id_info = id_token.verify_oauth2_token(token, Request(), "29837102542-1qkh0ikmm5ar52jp3ev3oaf8clvvlbos.apps.googleusercontent.com")
+
         # Use the token to access the userinfo endpoint
         userinfo_endpoint = "https://www.googleapis.com/oauth2/v1/userinfo"
         response = requests.get(userinfo_endpoint, headers={'Authorization': f'Bearer {token}'})
@@ -86,7 +87,8 @@ def fetch_all_events():
 
     try:
         # Verify the token
-        id_info = id_token.verify_oauth2_token(token, Request(), "55463530723-tm7626m1lf3skr28h31suabsgovc2vad.apps.googleusercontent.com")
+        # id_info = id_token.verify_oauth2_token(token, Request(), "55463530723-tm7626m1lf3skr28h31suabsgovc2vad.apps.googleusercontent.com")
+        id_info = id_token.verify_oauth2_token(token, Request(), "29837102542-1qkh0ikmm5ar52jp3ev3oaf8clvvlbos.apps.googleusercontent.com")
         
         service = authenticate_google_calendar()  
 
